@@ -1,0 +1,19 @@
+# Mini::Test
+
+snippet deftest
+alias   deftest
+abbr    def test_foo [...] end
+prev_word '^'
+    def test_${1:foo}
+      ${0}
+    end
+
+snippet asserte
+alias   asserte
+abbr    assert_equal(expected, actual, message = "foo")
+  assert_equal(${1:expected}, ${2:actual}, message = ${3:msg})
+
+snippet flunk
+alias   flunk
+abbr    flunk(message)
+  flunk("${1:msg}")
